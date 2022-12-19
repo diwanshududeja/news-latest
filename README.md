@@ -12,6 +12,7 @@ Used clean architecture with different well separated layers
 JetPack Compose for UI
 
 ***Disclaimer***
+
 Used developer account of NewsAPI.org API. It gives maximum of 100 results. 
 So, instead of infinite scroll it will scroll upto 100 news articles.
 
@@ -31,4 +32,5 @@ Integrated Kotlin coroutines to handle requests asynchronously and Jetpack compo
 
 ## Libraries
 Used Retrofit to call APIs (V-2.9.0)
+
 Coil to render images
