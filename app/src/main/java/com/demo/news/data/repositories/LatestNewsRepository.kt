@@ -4,5 +4,5 @@ import com.demo.news.data.DataResult
 
 
 interface LatestNewsRepository {
-    suspend fun loadLatestNewsData(): DataResult
+    suspend fun loadLatestNewsData(page: Int): DataResult
 }

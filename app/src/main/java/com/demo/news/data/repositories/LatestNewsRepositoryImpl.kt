@@ -7,8 +7,8 @@ import javax.inject.Inject
 
 class LatestNewsRepositoryImpl @Inject constructor(private val remoteDataSource: NewsRemoteDataSource) : LatestNewsRepository{
 
-    override suspend fun loadLatestNewsData(): DataResult {
-        val response = remoteDataSource.getNewsData()
+    override suspend fun loadLatestNewsData(page: Int): DataResult {
+        val response = remoteDataSource.getNewsData(page)
         return if (response.isSuccessful) {
             val responseData = response.body()
             if (responseData?.status == Constants.API_STATUS_SUCCESS){
@@ -21,9 +21,8 @@ class LatestNewsRepositoryImpl @Inject constructor(private val remoteDataSource:
                 DataResult.Error(Constants.API_ISSUE)
             }
         } else {
-            DataResult.Error(Constants.API_ISSUE)
+            DataResult.Error(Constants.API_MAX_LIMIT_REACHED)
         }
     }
-
 
 }
