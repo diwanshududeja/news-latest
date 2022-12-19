@@ -34,3 +34,5 @@ Integrated Kotlin coroutines to handle requests asynchronously and Jetpack compo
 Used Retrofit to call APIs (V-2.9.0)
 
 Coil to render images
+
+NewsAPI.org to get latest news data
